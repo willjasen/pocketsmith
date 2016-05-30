@@ -35,5 +35,13 @@ module Pocketsmith
       attributes = JSON.parse(response.body)
       new(attributes)
     end
+
+    def self.accounts
+      conn = Faraday.new("#{USER_URL}/#{id}/accounts")
+      conn.authorization("Key", ENV["api_key"])
+      response = conn.get
+      attributes = JSON.parse(response.body)
+      new(attributes)
+    end
   end
 end
