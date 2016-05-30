@@ -24,5 +24,4 @@ class PocketsmithUserTest < Minitest::Test
       #assert_equal "using_multiple_currencies", user.using_multiple_currencies
     end
   end 
-
 end

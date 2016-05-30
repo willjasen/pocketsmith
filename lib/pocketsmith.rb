@@ -5,6 +5,9 @@ require 'json'
 
 require_relative "pocketsmith/version"
 require_relative "pocketsmith/user"
+=======
+require "pocketsmith/version"
+require "pocketsmith/user"
 
 module Pocketsmith
   # Your code goes here...
