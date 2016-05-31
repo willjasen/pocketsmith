@@ -23,5 +23,13 @@ class PocketsmithUserTest < Minitest::Test
       #assert_equal "always_show_base_currency", user.always_show_base_currency
       #assert_equal "using_multiple_currencies", user.using_multiple_currencies
     end
-  end 
+  end
+
+  def test_it_gives_back_user_accounts
+    #VCR.use_cassette('user_accounts') do
+    #  accounts = Pocketsmith::User.accounts
+    #  assert_equal accounts, Hash.class
+    #end
+  end
+ 
 end
