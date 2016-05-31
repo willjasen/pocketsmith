@@ -21,27 +21,26 @@ module Pocketsmith
     end  
 
     def self.find(id)
-      conn = Faraday.new("#{USER_URL}/#{id}")
-      conn.authorization("Key", ENV["api_key"])
-      response = conn.get
-      attributes = JSON.parse(response.body)
-      new(attributes)
+      new(retrieve("#{USER_URL}/#{id}"))
     end
 
     def self.me
-      conn = Faraday.new("#{ME_URL}")
-      conn.authorization("Key", ENV["api_key"])
-      response = conn.get  
-      attributes = JSON.parse(response.body)
-      new(attributes)
+      new(retrieve("#{ME_URL}"))
     end
 
     def self.accounts
-      conn = Faraday.new("#{USER_URL}/#{id}/accounts")
-      conn.authorization("Key", ENV["api_key"])
+      new(retrieve("#{USER_URL}/#{id}/accounts"))
+    end
+
+    def self.categories
+      new(retrieve("#{USER_URL}/#{id}/categories"))
+    end
+
+    def self.retrieve(url)
+      conn = Faraday.new("#{url}")
+      conn.authorization("Key", ENV['api_key'])
       response = conn.get
       attributes = JSON.parse(response.body)
-      new(attributes)
     end
   end
 end
