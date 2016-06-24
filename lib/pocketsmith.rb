@@ -1,13 +1,11 @@
-API_URL = "https://api.pocketsmith.com/v2"
-
 require 'faraday'
 require 'json'
 
-require_relative "pocketsmith/version"
-require_relative "pocketsmith/user"
-require_relative "pocketsmith/account"
+API_URL = "https://api.pocketsmith.com/v2"
+
+require "pocketsmith/version"
+require "pocketsmith/user"
+require "pocketsmith/account"
 
 module Pocketsmith
-  def new
-  end
 end
