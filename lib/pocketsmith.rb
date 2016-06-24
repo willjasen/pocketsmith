@@ -8,5 +8,6 @@ require_relative "pocketsmith/user"
 require_relative "pocketsmith/account"
 
 module Pocketsmith
-  # Your code goes here...
+  def new
+  end
 end
